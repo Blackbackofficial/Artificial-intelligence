@@ -73,55 +73,53 @@
          "Name":"Физика конденсированного состояния"
       },
       {
-         "Name":"Перенос_энергии"
-      },
-      {
-         "Перенос энергии":
+         "Name":"Перенос энергии",
+         "Var":
          [
             {
                "Law": "Электромагнитное излучение",
                "Year": 1895,
                "Arg": 2,
-               "Accuracy": 0.000001,
+               "Accuracy": 6,
                "Level": 5,
                "popular": "Yes"
             }
          ]
       },
       {
-         "Name":"Счетчик_времени",
+         "Name":"Счетчик времени",
          "Var": [
             {
                "Law": "Волновая функция и плотность времени",
                "Year": 1900,
                "Arg": 2,
-               "Accuracy": 0.001,
+               "Accuracy": 3,
                "Level": 5,
                "popular": "No"
             }
          ]
       },
       {
-         "Name":"Понятие_фотона",
+         "Name":"Понятие фотона",
          "Var": [
             {
                "Law": "Электромагнитное излучение",
                "Year": 1923,
                "Arg": 2,
-               "Accuracy": 0.000000001,
+               "Accuracy": 9,
                "Level": 5,
                "popular": "Yes"
             }
          ]
       },
       {
-         "Name":"Теория_относительности_в_движущихся_средах",
+         "Name":"Теория относительности в движущихся средах",
          "Var": [
             {
                "Law": "Электромагнитное излучение",
                "Year": 1923,
                "Arg": 2,
-               "Accuracy": 0.000000001,
+               "Accuracy": 9,
                "Level": 5,
                "popular": "Yes"
             }
@@ -134,7 +132,7 @@
                "Law": "Закон Малюса",
                "Year": 1810,
                "Arg": 3,
-               "Accuracy": 0.01,
+               "Accuracy": 2,
                "Level": 5,
                "popular": "Yes"
             }
@@ -147,7 +145,7 @@
                "Law": "Принцип Гюйгенса-Френеля",
                "Year": 1666,
                "Arg": 4,
-               "Accuracy": 0.001,
+               "Accuracy": 3,
                "Level": 5,
                "popular": "No"
             }
@@ -160,7 +158,7 @@
                "Law": "Интерференция света",
                "Year": 1829,
                "Arg": 2,
-               "Accuracy": 0.00001,
+               "Accuracy": 5,
                "Level": 5,
                "popular": "Yes"
             }
@@ -173,7 +171,7 @@
                "Law": "Термодинамический закон",
                "Year": 1702,
                "Arg": 3,
-               "Accuracy": 0.0001,
+               "Accuracy": 4,
                "Level": 5,
                "popular": "Yes"
             }
@@ -186,7 +184,7 @@
                "Law": "Термодинамический закон",
                "Year": 1710,
                "Arg": 2,
-               "Accuracy": 0.00001,
+               "Accuracy": 5,
                "Level": 5,
                "popular": "Yes"
             }
@@ -199,7 +197,7 @@
                "Law": "Термодинамический закон",
                "Year": 1724,
                "Arg": 3,
-               "Accuracy": 0.00001,
+               "Accuracy": 5,
                "Level": 5,
                "popular": "Yes"
             }
@@ -212,7 +210,7 @@
                "Law": "Термодинамический закон",
                "Year": 1715,
                "Arg": 2,
-               "Accuracy": 0.00001,
+               "Accuracy": 5,
                "Level": 5,
                "popular": "Yes"
             }
@@ -225,7 +223,7 @@
                "Law": "Переходные процессы",
                "Year": 1802,
                "Arg": 5,
-               "Accuracy": 0.001,
+               "Accuracy": 3,
                "Level": 5,
                "popular": "Yes"
             }
@@ -238,7 +236,7 @@
                "Law": "Закон Ньютона-Рихмана",
                "Year": 1807,
                "Arg": 5,
-               "Accuracy": 0.001,
+               "Accuracy": 3,
                "Level": 3,
                "popular": "Yes"
             }
@@ -251,7 +249,7 @@
                "Law": "Переходные процессы",
                "Year": 1745,
                "Arg": 5,
-               "Accuracy": 0.001,
+               "Accuracy": 3,
                "Level": 5,
                "popular": "Yes"
             }
@@ -264,7 +262,7 @@
                "Law": "Закон кинематики",
                "Year": 1590,
                "Arg": 2,
-               "Accuracy": 0.001,
+               "Accuracy": 3,
                "Level": 5,
                "popular": "Yes"
             }
@@ -277,7 +275,7 @@
                "Law": "Закон кинематики",
                "Year": 1550,
                "Arg": 3,
-               "Accuracy": 0.001,
+               "Accuracy": 3,
                "Level": 5,
                "popular": "No"
             }
@@ -290,7 +288,7 @@
                "Law": "Закон кинематики",
                "Year": 1653,
                "Arg": 3,
-               "Accuracy": 0.001,
+               "Accuracy": 3,
                "Level": 5,
                "popular": "Yes"
             }
@@ -303,7 +301,7 @@
                "Law": "Закон кинематики",
                "Year": 1687,
                "Arg": 2,
-               "Accuracy": 0.001,
+               "Accuracy": 3,
                "Level": 5,
                "popular": "Yes"
             }
@@ -316,7 +314,7 @@
                "Law": "Природа",
                "Year": 0,
                "Arg": 10,
-               "Accuracy": 0.01,
+               "Accuracy": 2,
                "Level": 5,
                "popular": "Yes"
             }
@@ -329,7 +327,7 @@
                "Law": "Тело Гука",
                "Year": 1676,
                "Arg": 2,
-               "Accuracy": 0.001,
+               "Accuracy": 3,
                "Level": 5,
                "popular": "No"
             }
@@ -342,7 +340,7 @@
                "Law": "Гидростатическое давление",
                "Year": 1600,
                "Arg": 5,
-               "Accuracy": 0.00001,
+               "Accuracy": 5,
                "Level": 5,
                "popular": "No"
             }
@@ -355,7 +353,7 @@
                "Law": "Закон Ома",
                "Year": 1832,
                "Arg": 2,
-               "Accuracy": 0.0001,
+               "Accuracy": 4,
                "Level": 5,
                "popular": "Yes"
             }
@@ -368,7 +366,7 @@
                "Law": "Закон передвижения частиц",
                "Year": 1823,
                "Arg": 3,
-               "Accuracy": 0.00001,
+               "Accuracy": 5,
                "Level": 5,
                "popular": "No"
             }
@@ -381,7 +379,7 @@
                "Law": "Колебания",
                "Year": 1926,
                "Arg": 8,
-               "Accuracy": 0.00001,
+               "Accuracy": 5,
                "Level": 5,
                "popular": "Yes"
             }
@@ -394,7 +392,7 @@
                "Law": "Колебания",
                "Year": 1929,
                "Arg": 5,
-               "Accuracy": 0.0001,
+               "Accuracy": 4,
                "Level": 5,
                "popular": "Yes"
             }
@@ -407,7 +405,7 @@
                "Law": "Закон сохранения энергии",
                "Year": 2001,
                "Arg": 2,
-               "Accuracy": 0.00001,
+               "Accuracy": 5,
                "Level": 5,
                "popular": "No"
             }
@@ -420,7 +418,7 @@
                "Law": "Понятие энергии",
                "Year": 1990,
                "Arg": 2,
-               "Accuracy": 0.000000001,
+               "Accuracy": 9,
                "Level": 5,
                "popular": "No"
             }
@@ -433,7 +431,7 @@
                "Law": "Электромагнитное взаимодействие",
                "Year": 1930,
                "Arg": 7,
-               "Accuracy": 0.000000001,
+               "Accuracy": 9,
                "Level": 5,
                "popular": "No"
             }
@@ -446,7 +444,7 @@
                "Law": "Специальная теория относительности",
                "Year": 1907,
                "Arg": 3,
-               "Accuracy": 0.000001,
+               "Accuracy": 6,
                "Level": 5,
                "popular": "No"
             }
@@ -459,7 +457,7 @@
                "Law": "Специальная теория относительности",
                "Year": 1915,
                "Arg": 3,
-               "Accuracy": 0.000001,
+               "Accuracy": 6,
                "Level": 5,
                "popular": "Yes"
             }
@@ -472,7 +470,7 @@
                "Law": "Законы Ньютона, ядерная физика",
                "Year": 1939,
                "Arg": 4,
-               "Accuracy": 0.0000001,
+               "Accuracy": 6,
                "Level": 5,
                "popular": "No"
             }
@@ -485,7 +483,7 @@
                "Law": "Законы Нильса Бора",
                "Year": 1919,
                "Arg": 2,
-               "Accuracy": 0.000001,
+               "Accuracy": 6,
                "Level": 5,
                "popular": "No"
             }
@@ -498,7 +496,7 @@
                "Law": "Законы Хиггса",
                "Year": 1980,
                "Arg": 3,
-               "Accuracy": 0.000000001,
+               "Accuracy": 9,
                "Level": 5,
                "popular": "Yes"
             }
@@ -511,7 +509,7 @@
                "Law": "Законы постоянного тока и математики",
                "Year": 1942,
                "Arg": 10,
-               "Accuracy": 0.001,
+               "Accuracy": 3,
                "Level": 5,
                "popular": "Yes"
             }
@@ -524,7 +522,7 @@
                "Law": "Вунужденное излучение",
                "Year": 1917,
                "Arg": 3,
-               "Accuracy": 0.00001,
+               "Accuracy": 5,
                "Level": 5,
                "popular": "Yes"
             }
@@ -537,7 +535,7 @@
                "Law": "Гипотиза Де Бройля",
                "Year": 1900,
                "Arg": 3,
-               "Accuracy": 0.00001,
+               "Accuracy": 5,
                "Level": 5,
                "popular": "Yes"
             }
