@@ -53,7 +53,7 @@ def start():
 
 
 def get_term(term1, term2):
-    with open('Proximity-measures-1/data.json') as data:
+    with open('Artificial-intelligence/data.json') as data:  # Если нужно, поменяйте
         text = json.load(data)
         for element in text['node']:
             if element['Name'] == term1:
