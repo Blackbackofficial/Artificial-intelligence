@@ -1,6 +1,7 @@
 import json
 import math
 
+
 def start():
     print('Введите назание первого понятия:')
     term1 = input()

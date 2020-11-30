@@ -2,17 +2,15 @@ import pandas as pd
 
 
 def start():
-    df = pd.read_excel('DataSet.xlsx')
+    df = pd.read_excel('Book.xlsx')
     df = df.astype(str)
     df = df.set_index('Тема').T
-    df.to_excel('Book.xlsx')
-    df = pd.read_excel('Book.xlsx', index_col=0)
+    df.to_excel('DataSet.xlsx')
+    df = pd.read_excel('DataSet.xlsx', index_col=0)
     recList = list()
 
-    print('Введите назание понятия и предложу вам похожие:')
+    print('Введите назание понятия:')
     text = input()
-    print('На сколько широкий список интересов вы хотели? Введите число :')
-    width = int(input())
 
     for row in df:
         k = 0
@@ -20,7 +18,7 @@ def start():
         corrMat = pd.DataFrame(corrMat)
         tempMat = corrMat
         tempMat = tempMat.drop([row], axis=0)
-        while k != width:
+        while k != 1:
             name = tempMat.idxmax().item()
             value = tempMat[0][tempMat.idxmax().item()]
             recList.append([row, name, value])
