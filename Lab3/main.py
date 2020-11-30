@@ -16,15 +16,15 @@ def start():
 
     for row in df:
         k = 0
-        corrMatr = df.corrwith(df[row])
-        corrMatr = pd.DataFrame(corrMatr)
-        tempMatr = corrMatr
-        tempMatr = tempMatr.drop([row], axis=0)
+        corrMat = df.corrwith(df[row])
+        corrMat = pd.DataFrame(corrMat)
+        tempMat = corrMat
+        tempMat = tempMat.drop([row], axis=0)
         while k != width:
-            name = tempMatr.idxmax().item()
-            value = tempMatr[0][tempMatr.idxmax().item()]
+            name = tempMat.idxmax().item()
+            value = tempMat[0][tempMat.idxmax().item()]
             recList.append([row, name, value])
-            tempMatr = tempMatr.drop([tempMatr.idxmax().item()], axis=0)
+            tempMat = tempMat.drop([tempMat.idxmax().item()], axis=0)
             k += 1
 
     output = list()
