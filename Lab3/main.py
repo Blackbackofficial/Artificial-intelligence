@@ -2,6 +2,7 @@ import pandas as pd
 
 
 def start():
+    recomendations = pd.DataFrame()
     df = pd.read_excel('Book.xlsx')
     df = df.astype(str)
     df = df.set_index('Тема').T
@@ -26,6 +27,8 @@ def start():
             recList.append([row, name, value])
             tempMat = tempMat.drop([tempMat.idxmax().item()], axis=0)
             k += 1
+    recomendations = recomendations.append(recList, ignore_index=True)
+    recomendations.to_excel('result.xlsx')
 
     output = list()
     for element in recList:
