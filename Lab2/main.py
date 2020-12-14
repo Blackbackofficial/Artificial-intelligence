@@ -42,7 +42,7 @@ def start():
 
 
 def get_term(term1, term2):
-    with open('Artificial-intelligence/data.json') as data:  # Если нужно, поменяйте
+    with open('/Users/ivanchernov/PycharmProjects/Artificial-intelligence/Artificial-intelligence/Lab2/data.json') as data:  # Если нужно, поменяйте
         text = json.load(data)
         for element in text['node']:
             if element['Name'] == term1:
