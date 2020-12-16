@@ -11,8 +11,10 @@ def start():
     find_term = get_term(term1, term2)
     term1 = find_term[0][0]
     term2 = find_term[1][0]
-    term1.pop('Law')
-    term2.pop('Law')
+
+    term = str_to_int(term1, term2)
+    term1 = term[0]
+    term2 = term[1]
 
     if term1['popular'] == 'Yes':
         term1['popular'] = 1
@@ -42,7 +44,8 @@ def start():
 
 
 def get_term(term1, term2):
-    with open('/Users/ivanchernov/PycharmProjects/Artificial-intelligence/Artificial-intelligence/Lab2/data.json') as data:  # Если нужно, поменяйте
+    with open(
+            '/Users/ivanchernov/PycharmProjects/Artificial-intelligence/Artificial-intelligence/Lab2/data.json') as data:  # Если нужно, поменяйте
         text = json.load(data)
         for element in text['node']:
             if element['Name'] == term1:
@@ -71,6 +74,27 @@ def evklidov(term1, term2):
     return term
 
 
+# Преобразуем строки в числовые значения
+def str_to_int(term1, term2):
+    term = [term1, term2]
+    for element in term:
+        if element['Law'].__contains__('Закон'):
+            element['Law'] = 3
+            continue
+        if element['Law'].__contains__('Понятие'):
+            element['Law'] = 1
+            continue
+        if element['Law'].__contains__('теория'):
+            element['Law'] = 2
+            continue
+        if element['Law'].__contains__('Гипотиза'):
+            element['Law'] = 4
+            continue
+        else:
+            element['Law'] = 0
+    return term
+
+
 # Близость по дереву
 def proximity_tree(term1, term2):
     term = term1['Level'] - term2['Level']
@@ -80,21 +104,25 @@ def proximity_tree(term1, term2):
         return term1['Level']
 
 
+# Коэф корреляции
 def corraliation(term1, term2):
     sr_term1 = sum(term1.values()) / 5
     sr_term2 = sum(term2.values()) / 5
     # сигма y сумма квадратичная
-    list_term1 = [pow(term1["Year"] - sr_term2, 2), pow(term1["Arg"] - sr_term2, 2), pow(term1["Accuracy"] - sr_term2, 2),
+    list_term1 = [pow(term1["Year"] - sr_term2, 2), pow(term1["Arg"] - sr_term2, 2),
+                  pow(term1["Accuracy"] - sr_term2, 2),
                   pow(term1["Level"] - sr_term2, 2), 1]
     # сигма x сумма квадратичная
-    list_term2 = [pow(term2["Year"] - sr_term1, 2), pow(term2["Arg"] - sr_term1, 2), pow(term2["Accuracy"] - sr_term1, 2),
+    list_term2 = [pow(term2["Year"] - sr_term1, 2), pow(term2["Arg"] - sr_term1, 2),
+                  pow(term2["Accuracy"] - sr_term1, 2),
                   pow(term2["Level"] - sr_term1, 2), 1]
     # Сигмы 1 и 2
     sigm_term1 = math.sqrt(sum(list_term1) / 5)
     sigm_term2 = math.sqrt(sum(list_term2) / 5)
     # средний term1 b term2
     term1_term2 = 1 / 5 * sum(term1.values()) * sum(term2.values())
-    cov = (term1_term2 - sr_term1 * sr_term2) / (sigm_term1 * sigm_term2)
+    cov = (term1_term2 - sr_term1 * sr_term2) / (sigm_term1 * sigm_term2) - 1
+    cov = 1 - cov
     return cov
 
 
