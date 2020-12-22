@@ -2,7 +2,6 @@ import pandas as pd
 
 
 def start():
-    recomendations = pd.DataFrame()
     df = pd.read_excel('Book.xlsx')
     df = df.astype(str)
     df = df.set_index('Тема').T
