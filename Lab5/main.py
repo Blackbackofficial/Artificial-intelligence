@@ -1,16 +1,12 @@
 import pandas as pd
+import xlrd
+import xlwt
 
 
 def start():
-    recomendations = pd.DataFrame()
-    df = pd.read_excel('Book.xlsx')
-    df = df.astype(str)
-    df = df.set_index('Тема').T
-    df.to_excel('DataSet.xlsx')
-
     recList = []
 
-    print('Введите год принятия закона:')
+    print('Введите век принятия закона:')
     Year = int(input())
     print('Введите колличество аргуменов:')
     Arg = int(input())
@@ -22,6 +18,7 @@ def start():
     popular = input()
     print('Введите назание закона:')
     Law = input()
+    Law = str_to_int(Law)
     result = []
     inter = [result]
 
@@ -42,14 +39,30 @@ def start():
     col = pd.DataFrame(inter, index=['Yours'],
                        columns=['Век', 'Аргументы', 'Точность', 'Уровень', 'Популярность', 'Закон'])
     df = df.append(col)
-    df.to_excel('result.xlsx')
+    df.to_excel('result.xls')
+    df = pd.read_excel('result.xls', index_col=0)
 
-    df = pd.read_excel('result.xlsx')
+    rb = xlrd.open_workbook('result.xls')
+    sheet = rb.sheet_by_index(0)
+    vals = [sheet.row_values(rownum) for rownum in range(sheet.nrows)]
+    vals[0][0] = 'Тема'
+
+    wb = xlwt.Workbook()
+    ws = wb.add_sheet('Test')
+
+    for el in range(6):
+        i = 0
+        for rec in vals:
+            ws.write(i, el, rec[el])
+            i += 1
+
+    wb.save('result.xls')
+
+    df = pd.read_excel('result.xls')
     df = df.astype(str)
     df = df.set_index('Тема').T
-    df.to_excel('DataSet.xlsx')
-    df = pd.read_excel('DataSet.xlsx', index_col=0)
-
+    df.to_excel('result.xls')
+    df = pd.read_excel('result.xls', index_col=0)
 
     for row in df:
         k = 0
@@ -57,25 +70,40 @@ def start():
         corrMat = pd.DataFrame(corrMat)
         tempMat = corrMat
         tempMat = tempMat.drop([row], axis=0)
-        while k != 1:
+        while k != 2:
             name = tempMat.idxmax().item()
             value = tempMat[0][tempMat.idxmax().item()]
             recList.append([row, name, value])
             tempMat = tempMat.drop([tempMat.idxmax().item()], axis=0)
             k += 1
-    recomendations = recomendations.append(recList, ignore_index=True)
-    recomendations.to_excel('resultref.xlsx')
 
+    text = 'Yours'
     output = list()
-    # for element in recList:
-    #     if text == element[0]:
-    #         output.append(element)
+    for element in recList:
+        if text == element[0]:
+            output.append(element)
 
-    print('Возможно вам было бы интересны такие темы как:')
+    print('Мы нашли похожие по вашему запросу:')
     counter = 0
     for element in output:
         counter += 1
         print('{}) '.format(counter) + element[1])
+
+
+def str_to_int(Law):
+    if Law.__contains__('Закон'):
+        Law = 3
+    if Law.__contains__('Понятие'):
+        Law = 1
+    if Law.__contains__('теория'):
+        Law = 2
+    if Law.__contains__('Гипотиза'):
+        Law = 4
+    if Law.__contains__('излучение'):
+        Law = 5
+    else:
+        Law = 0
+    return Law
 
 
 if __name__ == '__main__':
