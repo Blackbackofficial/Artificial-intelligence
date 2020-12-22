@@ -1,3 +1,4 @@
+from os import remove
 import pandas as pd
 import xlrd
 import xlwt
@@ -40,7 +41,6 @@ def start():
                        columns=['Век', 'Аргументы', 'Точность', 'Уровень', 'Популярность', 'Закон'])
     df = df.append(col)
     df.to_excel('result.xls')
-    df = pd.read_excel('result.xls', index_col=0)
 
     rb = xlrd.open_workbook('result.xls')
     sheet = rb.sheet_by_index(0)
@@ -55,7 +55,6 @@ def start():
         for rec in vals:
             ws.write(i, el, rec[el])
             i += 1
-
     wb.save('result.xls')
 
     df = pd.read_excel('result.xls')
@@ -76,6 +75,7 @@ def start():
             recList.append([row, name, value])
             tempMat = tempMat.drop([tempMat.idxmax().item()], axis=0)
             k += 1
+    remove('result.xls')
 
     text = 'Yours'
     output = list()
