@@ -1,14 +1,14 @@
-# Labs for artificial intelligence
-1) DataSet в json 
-2) Меры оценки близости листьев в DataSet
-3) Коллаборативная фильтрация
-4) Контентно ориентированная фильтрация (Метод А)
-5) Поиск по параметрическому запросу
+#Labs for artificial intelligence
+1) DataSet in json
+2) Measures for assessing the proximity of leaves in the DataSet
+3) Collaborative filtering
+4) Content Based Filtering (Method A)
+5) Search by parametric query
 
-РК1 - нет
+RK1 - no
 
-6) Лежит pdf и pages файл с описанием новой темы курса валют и сценариями
-7) Находится запроганый бот курс валют
-9) Кастомизация мультимодального интерфейса
+6) There is a pdf and pages file with a description of the new topic of the exchange rate and scenarios
+7) There is a loaded bot exchange rate
+9) Customization of the multimodal interface
 
-РК2 - два мини эссе с конференции https://ai-journey.ru/
+RK2 - two mini essays from the conference https://ai-journey.ru/
